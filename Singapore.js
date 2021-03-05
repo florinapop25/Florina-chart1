@@ -86,20 +86,16 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 					if(layout.gotoSheet.length > 0) {
 					    if(layout.gotoSheet=="next") {
 							app.field(dim1).selectValues([{qText: context}]);
-						    	app.field(dim1).selectValues([{qText: context}]);
+						    	
 						    
-						} else {
-							app.field(dim1).selectValues([{qText: context}]);
-							app.field(dim1).selectValues([{qText: context}]);
-							
-						}
+						} 
 					}
 					
 				}
 			}
 			return qlik.Promise.resolve();
 		},
-		controller: ['$scope', function (context) {
+		//controller: ['$scope', function (context) {
 			// console.log(context);
 		}]
 	};
