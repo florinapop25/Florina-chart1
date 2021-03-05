@@ -86,10 +86,10 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 					if(layout.gotoSheet.length > 0) {
 					    if(layout.gotoSheet=="next") {
 							app.field(dim1).selectValues([{qText: context}]);
-						    qlik.navigation.nextSheet();
+						    
 						} else {
 							app.field(dim1).selectValues([{qText: context}]);
-							qlik.navigation.gotoSheet(layout.gotoSheet);
+							
 						}
 					}
 					app.field(dim1).selectValues([{qText: context}]);
