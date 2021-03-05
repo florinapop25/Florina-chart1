@@ -84,15 +84,9 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 				this.$scope.myFunc = function(context) {
 					//console.log('myFunc:', context);
 					if(layout.gotoSheet.length > 0) {
-					    if(layout.gotoSheet=="next") {
-							//qlik.navigation.nextSheet();
-						    app.field(dim1).selectValues([{qText: context}]);
-						} else {
-							//qlik.navigation.gotoSheet(layout.gotoSheet);
-							app.field(dim1).selectValues([{qText: context}]);
-						}
+					   app.field(dim1).selectValues([{qText: context}]);
 					}
-					app.field(dim1).selectValues([{qText: context}]);
+					
 				}
 			}
 			return qlik.Promise.resolve();
