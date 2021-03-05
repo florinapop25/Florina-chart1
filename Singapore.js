@@ -60,7 +60,7 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 									label: "Open on Github",
 									component: "button", 
 									action: function(arg) {
-										window.open('https://github.com/ChristofSchwarz/qs_ext_rag_select','_blank');
+										window.open('https://github.com/florinapop25/Florina-chart1');
 									}
 								}
 							]
