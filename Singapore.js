@@ -92,7 +92,7 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 							
 						}
 					}
-					app.field(dim1).selectValues([{qText: context}]);
+					
 				}
 			}
 			return qlik.Promise.resolve();
