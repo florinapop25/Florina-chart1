@@ -83,9 +83,9 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 				this.$scope.table = qlik.table( this );
 				this.$scope.myFunc = function(context) {
 					//console.log('myFunc:', context);
-					if(layout.gotoSheet.length > 0) {
+					
 					   app.field(dim1).selectValues([{qText: context}]);
-					}
+					
 					
 				}
 			}
