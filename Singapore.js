@@ -50,7 +50,7 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 									ref : "boxCss",
 									label : "Add more css styling for each element here",
 									type : "string",
-									defaultValue : "width:10%;height: 10%; font-size: 200%;text-align: center; padding-top: 10px; padding-bottom: 30px; margin-bottom: 20px; margin-left: 10px; padding-top: 80px; padding-left:30px; padding-right: 37px; margin-top: 20px;"						
+									defaultValue : "width:19%;"						
 								},{
 									ref : "gotoSheet",
 									label : "On click, go to Sheet id (leave empty for no sheet navigation)",
@@ -60,7 +60,7 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 									label: "Open on Github",
 									component: "button", 
 									action: function(arg) {
-										window.open('https://github.com/florinapop25/Florina-chart1');
+										window.open('https://github.com/ChristofSchwarz/qs_ext_rag_select','_blank');
 									}
 								}
 							]
@@ -83,10 +83,16 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 				this.$scope.table = qlik.table( this );
 				this.$scope.myFunc = function(context) {
 					//console.log('myFunc:', context);
-					
-					   app.field(dim1).selectValues([{qText: context}]);
-					
-					
+					if(layout.gotoSheet.length > 0) {
+					    if(layout.gotoSheet=="next") {
+							app.field(dim1).selectValues([{qText: context}]);
+						    qlik.navigation.nextSheet();
+						} else {
+							app.field(dim1).selectValues([{qText: context}]);
+							qlik.navigation.gotoSheet(layout.gotoSheet);
+						}
+					}
+					app.field(dim1).selectValues([{qText: context}]);
 				}
 			}
 			return qlik.Promise.resolve();
