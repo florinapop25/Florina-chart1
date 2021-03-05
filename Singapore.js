@@ -95,7 +95,7 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 			}
 			return qlik.Promise.resolve();
 		},
-		//controller: ['$scope', function (context) {
+		controller: ['$scope', function (context) {
 			// console.log(context);
 		}]
 	};
