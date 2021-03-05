@@ -89,6 +89,9 @@ define( ["qlik","jquery", "text!./style.css", "text!./template.html"], function 
 						    	
 						    
 						} 
+						else
+						{
+							app.field(dim1).selectValues([{qText: context}]);
 					}
 					
 				}
